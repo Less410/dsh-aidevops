@@ -6,6 +6,7 @@ Bring an [AI DevOps](https://gitee.com/lees410/aidevops) control plane into **De
 
 The plugin registers four `ai_devops_*` tools that call the platform's agent API (the same contract as the platform's MCP bridge). The control plane is expected locally or on your intranet, by default at `http://127.0.0.1:8787`.
 
+- [What is AI DevOps?](#what-is-ai-devops)
 - [Tools](#tools)
 - [Requirements](#requirements)
 - [Install](#install)
@@ -17,6 +18,23 @@ The plugin registers four `ai_devops_*` tools that call the platform's agent API
 - [Development](#development)
 - [Publishing to the community catalog](#publishing-to-the-community-catalog)
 - [License](#license)
+
+## What is AI DevOps?
+
+[AI DevOps](https://gitee.com/lees410/aidevops) is a self-hosted, multi-cloud delivery and operations control plane for development teams. It brings repositories, applications, release pipelines, versions and rollbacks, cloud resources, databases, servers, incidents, approvals and audit into one browser workspace, so a small team can run the whole commit -> build -> deploy -> observe -> roll back loop without stitching together a cloud console, CI and a pile of scripts.
+
+The platform is built around a few hard rules:
+
+- **Control plane and execution plane are separate.** The web app, API and SQLite store never run repository scripts; build/test/deploy is meant for an isolated Runner. The current MVP uses simulated execution and marks it honestly.
+- **Git and the cloud are the sources of truth.** The platform keeps references, cached inventory, pipeline state and audit events, not copies of your code or cloud credentials.
+- **AI is read-mostly and writes are gated.** Agents can inspect state, analyze failures and submit delivery tasks. Production changes wait for an administrator's approval in the browser; agent tokens cannot approve, run cloud changes or read cloud secrets.
+- **Everything is auditable.** Each action is an append-only event with actor, target, result and trace id.
+
+What the browser workspace covers: overview, code repositories, application management, releases and versions (deployment history, rollback, search and pagination), multi-cloud resources (Tencent Cloud, Alibaba Cloud, Huawei Cloud: servers, VPCs, security groups, domains, DNS and real CPU/memory metrics), database connections, server SSH terminals, AI Copilot, error diagnostics, the audit center, and platform settings with Agent Bridge/MCP configuration.
+
+This plugin is the DSH-side adapter: it calls the platform's scoped agent API so the DeepSeek Harness agent can do those four read/deliver operations without an MCP client. The platform itself is installed separately (Windows start script, `pnpm`, or Docker Compose) and is not bundled with this package.
+
+Read more: [architecture and security boundaries](https://gitee.com/lees410/aidevops/blob/master/docs/architecture.md) · [zero-code beginner guide](https://gitee.com/lees410/aidevops/blob/master/docs/beginner-guide.md).
 
 ## Tools
 
@@ -176,6 +194,23 @@ MIT
 ## 中文
 
 把 **AI DevOps** 控制面（默认 `http://127.0.0.1:8787`，源码 [gitee.com/lees410/aidevops](https://gitee.com/lees410/aidevops)）接入 **DeepSeek Harness**，注册 4 个原生 `ai_devops_*` 工具，不需要 MCP 客户端、不起子进程。接口契约与平台自带的 MCP 桥一致。
+
+### AI DevOps 是什么
+
+[AI DevOps](https://gitee.com/lees410/aidevops) 是一个可自托管的多云研发交付与运维控制面：把代码仓库、应用、发布流水线、版本与回滚、云资源、数据库、服务器、故障、审批和审计收进一个浏览器工作台，让小团队不必在云控制台、CI 和一堆脚本之间来回切换，就能跑完“提交 → 构建 → 发布 → 观测 → 回滚”的闭环。
+
+平台的几条硬规则：
+
+- **控制面与执行面分离**：Web、API 和 SQLite 不直接运行仓库脚本，构建/测试/发布由隔离 Runner 执行；当前 MVP 是模拟执行，平台会如实标注。
+- **Git 与云是事实源**：平台只保存引用、缓存清单、流程状态和审计事件，不复制你的代码和云凭据。
+- **AI 只读为主，写操作分级**：智能体能查询、分析故障、提交交付任务；生产变更必须由管理员在浏览器里审批，智能体令牌不能审批、不能执行云变更、不能读云密钥。
+- **一切可审计**：每次操作都是 append-only 事件，记录操作者、对象、结果与 trace id。
+
+浏览器工作台现有能力：总览、代码仓库、应用管理、发布与版本（部署历史、回滚、搜索与分页）、多云资源（腾讯云/阿里云/华为云：服务器、VPC、安全组、域名、DNS 和真实 CPU/内存指标）、数据库连接、服务器 SSH 终端、AI Copilot、故障诊断、审计中心，以及带 Agent Bridge/MCP 配置的平台设置。
+
+本插件是 DSH 侧适配器：调用平台的受限智能体接口，让 DeepSeek Harness 智能体无需 MCP 客户端即可完成上述 4 个查询/交付操作。平台本身需单独安装（Windows 启动脚本、`pnpm` 或 Docker Compose），不包含在本插件包内。
+
+延伸阅读：[架构与安全边界](https://gitee.com/lees410/aidevops/blob/master/docs/architecture.md) · [零代码使用指南](https://gitee.com/lees410/aidevops/blob/master/docs/beginner-guide.md)。
 
 ### 工具
 
