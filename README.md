@@ -84,7 +84,7 @@ dsh plugin --profile <your-profile> add dsh-ai-devops
 From GitHub:
 
 ```sh
-dsh plugin --profile <your-profile> add github:OWNER/dsh-ai-devops
+dsh plugin --profile <your-profile> add github:Less410/dhs-aidevops
 ```
 
 On DSH Desktop: open **Plugins**, search for `dsh-ai-devops`, install, then restart the host once so the bundle loads.
@@ -201,7 +201,7 @@ MIT
 ```sh
 dsh plugin --profile <你的 profile> add dsh-ai-devops
 # 或从 GitHub 安装：
-dsh plugin --profile <你的 profile> add github:OWNER/dsh-ai-devops
+dsh plugin --profile <你的 profile> add github:Less410/dhs-aidevops
 ```
 
 DSH 桌面版：打开「插件」，搜索 `dsh-ai-devops` 安装，然后重启一次宿主让 bundle 生效。
