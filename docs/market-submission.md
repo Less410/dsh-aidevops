@@ -4,7 +4,7 @@ The community catalog ([awesome-dsh-plugin](https://github.com/awesome-dsh-plugi
 
 ## 1. Create the GitHub repository
 
-- Owner/name: `Less410/dhs-aidevops` (public). The npm package is still named `dsh-ai-devops`.
+- Owner/name: `Less410/dsh-aidevops` (public). The npm package is still named `dsh-ai-devops`.
 - Push this folder as the repo root.
 - Add the **`dsh-plugin`** topic (repo page → About → topics) — required by the catalog.
 - Keep the repo at least **1 day old** before opening the catalog PR: the catalog CI rejects repos created minutes before the submission.
@@ -22,11 +22,11 @@ npm publish        # publishes dsh-ai-devops@0.1.0 (name is free on npm as of 20
 
 ## 3. Open the catalog PR
 
-Fork [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) and add **one file**: `data/plugins/Less410__dhs-aidevops.yml` (the file name must be `<owner>__<repo>.yml`, i.e. it mirrors the GitHub repo, not the npm package name)
+Fork [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin) and add **one file**: `data/plugins/Less410__dsh-aidevops.yml` (the file name must be `<owner>__<repo>.yml`, i.e. it mirrors the GitHub repo, not the npm package name)
 
 ```yaml
-url: https://github.com/Less410/dhs-aidevops
-name: Less410/dhs-aidevops
+url: https://github.com/Less410/dsh-aidevops
+name: Less410/dsh-aidevops
 category: dev
 description:
   en: Bridge an AI DevOps control plane into DSH with four ai_devops tools for health, delivery status, cloud resources and delivery tasks.

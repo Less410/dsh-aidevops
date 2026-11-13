@@ -13,11 +13,11 @@
   "author": "dsh-ai-devops contributors",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Less410/dhs-aidevops.git"
+    "url": "git+https://github.com/Less410/dsh-aidevops.git"
   },
-  "homepage": "https://github.com/Less410/dhs-aidevops#readme",
+  "homepage": "https://github.com/Less410/dsh-aidevops#readme",
   "bugs": {
-    "url": "https://github.com/Less410/dhs-aidevops/issues"
+    "url": "https://github.com/Less410/dsh-aidevops/issues"
   },
   "keywords": [
     "deepseek",
