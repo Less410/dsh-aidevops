@@ -1,0 +1,24 @@
+{
+  "name": "ai-devops",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI-native multi-cloud DevOps control plane",
+  "packageManager": "pnpm@11.19.0",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "pnpm -r --parallel --stream run dev",
+    "dev:api": "pnpm --filter @ai-devops/api dev",
+    "dev:web": "pnpm --filter @ai-devops/web dev",
+    "build": "pnpm --filter @ai-devops/web build && pnpm --filter @ai-devops/api build",
+    "start": "pnpm --filter @ai-devops/api start",
+    "test": "pnpm --filter @ai-devops/api test",
+    "typecheck": "pnpm -r run typecheck",
+    "smoke:mcp": "pnpm --filter @ai-devops/mcp smoke",
+    "smoke:ui": "node scripts/ui-smoke.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.64.1"
+  }
+}

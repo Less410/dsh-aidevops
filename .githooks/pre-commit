@@ -1,0 +1,6 @@
+#!/bin/sh
+# 提交前检查暂存区里的真实数据与密钥（只拦新增行，不改任何文件）
+NODE=$(command -v node 2>/dev/null)
+[ -n "$NODE" ] || NODE=$(git rev-parse --show-toplevel)/runtime/node/node.exe
+[ -x "$NODE" ] || { echo "pre-commit: 找不到 node，跳过脱敏检查" >&2; exit 0; }
+exec "$NODE" "$(git rev-parse --show-toplevel)/.githooks/check-staged.mjs"

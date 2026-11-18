@@ -1,0 +1,295 @@
+<div id="aidevops-architecture" class="arc-root">
+  <h2 class="arc-title">AI DevOps：从一句话需求到线上结果</h2>
+
+  <div class="nav nav-pills" role="tablist" aria-label="AI DevOps 展示视角">
+    <button class="nav-link active" id="arc-overview-tab" role="tab" aria-controls="arc-overview" aria-selected="true" type="button">全景流程</button>
+    <button class="nav-link" id="arc-layers-tab" role="tab" aria-controls="arc-layers" aria-selected="false" type="button">产品四层</button>
+    <button class="nav-link" id="arc-you-tab" role="tab" aria-controls="arc-you" aria-selected="false" type="button">你只做三件事</button>
+    <button class="nav-link" id="arc-safety-tab" role="tab" aria-controls="arc-safety" aria-selected="false" type="button">发布安全门</button>
+  </div>
+
+  <div id="arc-overview" role="tabpanel" aria-labelledby="arc-overview-tab">
+    <div class="arc-flow" role="img" aria-label="一次交付从需求到访问地址的六步流程">
+      <div class="arc-node arc-you">
+        <i data-lucide="user-round" aria-hidden="true"></i>
+        <b>你</b>
+        <span>只说目标</span>
+      </div>
+      <i class="arc-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
+      <div class="arc-node arc-agent">
+        <i data-lucide="sparkles" aria-hidden="true"></i>
+        <b>智能体</b>
+        <span>开发与测试</span>
+      </div>
+      <i class="arc-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
+      <div class="arc-node arc-git">
+        <i data-lucide="git-branch" aria-hidden="true"></i>
+        <b>代码仓库</b>
+        <span>版本固定</span>
+      </div>
+      <i class="arc-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
+      <div class="arc-node arc-platform">
+        <i data-lucide="shield-check" aria-hidden="true"></i>
+        <b>AI DevOps</b>
+        <span>构建与审批</span>
+      </div>
+      <i class="arc-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
+      <div class="arc-node arc-cloud">
+        <i data-lucide="cloud" aria-hidden="true"></i>
+        <b>三家云</b>
+        <span>腾讯/阿里/华为</span>
+      </div>
+      <i class="arc-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
+      <div class="arc-node arc-result">
+        <i data-lucide="monitor-check" aria-hidden="true"></i>
+        <b>浏览器</b>
+        <span>直接查看结果</span>
+      </div>
+    </div>
+    <p class="arc-note">
+      智能体代替你写代码和发布，平台在每一步留下记录；你只在授权连接和生产上线时需要明确同意。
+    </p>
+  </div>
+
+  <div id="arc-layers" role="tabpanel" aria-labelledby="arc-layers-tab" hidden>
+    <div class="arc-layers" role="img" aria-label="AI DevOps 的产品四层结构">
+      <div class="arc-layer">
+        <span class="arc-layer-index">01</span>
+        <div>
+          <b><i data-lucide="layout-dashboard" aria-hidden="true"></i> 门户层：你看到的一切</b>
+          <p>总览、应用类型、仓库、流水线、审批、审计。用中文按钮和状态说明代替技术细节。</p>
+        </div>
+      </div>
+      <div class="arc-layer">
+        <span class="arc-layer-index">02</span>
+        <div>
+          <b><i data-lucide="workflow" aria-hidden="true"></i> 控制层：规则与记录</b>
+          <p>谁可以做什么、每一步是否通过、证据是什么。它只记录和判断，不亲自执行构建。</p>
+        </div>
+      </div>
+      <div class="arc-layer">
+        <span class="arc-layer-index">03</span>
+        <div>
+          <b><i data-lucide="container" aria-hidden="true"></i> 执行层：隔离 Runner</b>
+          <p>在临时容器里拉代码、测试、打包和部署，用完即销毁，不污染你的电脑和服务器。</p>
+        </div>
+      </div>
+      <div class="arc-layer">
+        <span class="arc-layer-index">04</span>
+        <div>
+          <b><i data-lucide="layers" aria-hidden="true"></i> 适配层：多云与多端</b>
+          <p>网站、小程序、API、移动端共用一套字段模板；腾讯云、阿里云、华为云各一个连接器。</p>
+        </div>
+      </div>
+    </div>
+    <p class="arc-note">
+      你只需要理解第一层。其余三层由平台和智能体维护，它们的结论会翻译成第一层里的中文状态。
+    </p>
+  </div>
+
+  <div id="arc-you" role="tabpanel" aria-labelledby="arc-you-tab" hidden>
+    <div class="arc-steps" role="img" aria-label="新手只需要做的三件事">
+      <div>
+        <span class="arc-step-index">1</span>
+        <div>
+          <b>说清楚你要什么</b>
+          <p>在 Codex 或 WorkBuddy 里用中文描述目标，例如“做一个能查看订单状态的页面”。</p>
+        </div>
+      </div>
+      <div>
+        <span class="arc-step-index">2</span>
+        <div>
+          <b>一次性授权连接</b>
+          <p>按引导完成一次云账号的安全授权。此后同一类型的新应用自动复用配置，不用重复操作。</p>
+        </div>
+      </div>
+      <div>
+        <span class="arc-step-index">3</span>
+        <div>
+          <b>看懂影响后点“批准”</b>
+          <p>生产上线前平台展示变更、风险和回滚方式。看不懂就先拒绝，让智能体继续解释。</p>
+        </div>
+      </div>
+    </div>
+    <p class="arc-note">
+      平台按应用类型准备字段模板，就是为了让你每次只需要补充自己的业务信息，不需要理解技术配置。
+    </p>
+  </div>
+
+  <div id="arc-safety" role="tabpanel" aria-labelledby="arc-safety-tab" hidden>
+    <div class="arc-flow arc-gates" role="img" aria-label="生产发布需要依次通过的五道安全门">
+      <div class="arc-node arc-git">
+        <i data-lucide="lock-keyhole" aria-hidden="true"></i>
+        <b>固定版本</b>
+        <span>不用会变的 latest</span>
+      </div>
+      <i class="arc-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
+      <div class="arc-node arc-agent">
+        <i data-lucide="scan-line" aria-hidden="true"></i>
+        <b>质量门禁</b>
+        <span>测试与安全扫描</span>
+      </div>
+      <i class="arc-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
+      <div class="arc-node arc-platform">
+        <i data-lucide="user-check" aria-hidden="true"></i>
+        <b>人工审批</b>
+        <span>你确认影响范围</span>
+      </div>
+      <i class="arc-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
+      <div class="arc-node arc-cloud">
+        <i data-lucide="chart-spline" aria-hidden="true"></i>
+        <b>小流量灰度</b>
+        <span>先给少数用户验证</span>
+      </div>
+      <i class="arc-arrow" data-lucide="arrow-right" aria-hidden="true"></i>
+      <div class="arc-node arc-result">
+        <i data-lucide="rotate-ccw" aria-hidden="true"></i>
+        <b>健康或回滚</b>
+        <span>异常自动回到旧版</span>
+      </div>
+    </div>
+    <p class="arc-note">
+      每一次发布都有版本、审批人、测试结果和回滚目标对应，出问题可以找到“是谁、在哪一步、如何恢复”。
+    </p>
+  </div>
+</div>
+
+<style>
+  #aidevops-architecture {
+    display: grid;
+    gap: 1rem;
+    max-width: 100%;
+  }
+
+  #aidevops-architecture .arc-title {
+    margin: 0;
+  }
+
+  #aidevops-architecture .arc-flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  #aidevops-architecture .arc-node {
+    display: grid;
+    min-width: 7.5rem;
+    justify-items: start;
+    gap: 0.15rem;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    background: var(--card);
+    color: var(--card-foreground);
+  }
+
+  #aidevops-architecture .arc-node i {
+    color: var(--viz-series-1);
+  }
+
+  #aidevops-architecture .arc-you i {
+    color: var(--viz-series-1);
+  }
+
+  #aidevops-architecture .arc-agent i {
+    color: var(--viz-series-2);
+  }
+
+  #aidevops-architecture .arc-git i {
+    color: var(--viz-series-3);
+  }
+
+  #aidevops-architecture .arc-platform i {
+    color: var(--viz-series-4);
+  }
+
+  #aidevops-architecture .arc-cloud i {
+    color: var(--viz-series-5);
+  }
+
+  #aidevops-architecture .arc-result i {
+    color: var(--viz-series-6);
+  }
+
+  #aidevops-architecture .arc-node b {
+    font-weight: 500;
+  }
+
+  #aidevops-architecture .arc-node span {
+    color: var(--muted-foreground);
+  }
+
+  #aidevops-architecture .arc-arrow {
+    color: var(--muted-foreground);
+  }
+
+  #aidevops-architecture .arc-note {
+    margin: 0.75rem 0 0;
+    color: var(--muted-foreground);
+  }
+
+  #aidevops-architecture .arc-layers,
+  #aidevops-architecture .arc-steps {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  #aidevops-architecture .arc-layer,
+  #aidevops-architecture .arc-steps > div {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 0.7rem;
+  }
+
+  #aidevops-architecture .arc-layer-index,
+  #aidevops-architecture .arc-step-index {
+    color: var(--viz-series-1);
+    font-weight: 500;
+  }
+
+  #aidevops-architecture .arc-step-index {
+    display: grid;
+    width: 1.7rem;
+    height: 1.7rem;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+  }
+
+  #aidevops-architecture .arc-layer b,
+  #aidevops-architecture .arc-steps b {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 500;
+  }
+
+  #aidevops-architecture .arc-layer b i,
+  #aidevops-architecture .arc-steps b i {
+    color: var(--muted-foreground);
+  }
+
+  #aidevops-architecture .arc-layer p,
+  #aidevops-architecture .arc-steps p {
+    margin: 0.2rem 0 0;
+    color: var(--muted-foreground);
+  }
+
+  @media (max-width: 600px) {
+    #aidevops-architecture .arc-flow {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    #aidevops-architecture .arc-arrow {
+      align-self: center;
+      transform: rotate(90deg);
+    }
+
+    #aidevops-architecture .arc-node {
+      min-width: 0;
+    }
+  }
+</style>
